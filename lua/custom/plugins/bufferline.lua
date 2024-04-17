@@ -14,7 +14,6 @@ return {
   },
   config = function()
     local bufferline = require 'bufferline'
-    print 'Hello bufferline'
     bufferline.setup {
       options = {
         style_preset = {
@@ -24,13 +23,10 @@ return {
         separator_style = 'slant',
       },
     }
-
-    -- Buffer switching
-    vim.keymap.set('n', '<S-h>', function()
-      bufferline.cycle(-1)
-    end, { desc = 'Move focus to the left window' })
-    vim.keymap.set('n', '<S-l>', function()
-      bufferline.cycle(1)
-    end, { desc = 'Move focus to the left window' })
   end,
+
+  keys = {
+    { '<S-h>', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Previout buffer' } },
+    { '<S-l>', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next buffer' } },
+  },
 }
