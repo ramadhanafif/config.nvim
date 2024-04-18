@@ -17,10 +17,10 @@ return {
     bufferline.setup {
       options = {
         style_preset = {
-          bufferline.style_preset.no_italic,
-          bufferline.style_preset.no_bold,
+          -- bufferline.style_preset.no_italic,
+          -- bufferline.style_preset.no_bold,
         },
-        separator_style = 'slant',
+        separator_style = 'padded_slope',
       },
     }
   end,
@@ -28,5 +28,6 @@ return {
   keys = {
     { '<S-h>', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Previout buffer' } },
     { '<S-l>', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next buffer' } },
+    { '<leader>bc', '<cmd>BufferLineCloseOthers<cr>', { desc = 'Close all other buffers' } },
   },
 }
